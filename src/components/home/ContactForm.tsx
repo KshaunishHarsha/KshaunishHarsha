@@ -29,6 +29,8 @@ export default function ContactForm() {
         }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (String(data.success) !== "true") throw new Error(data.message || "Submission rejected");
 
       setStatus("sent");
       form.reset();
