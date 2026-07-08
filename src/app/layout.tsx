@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Mono, Press_Start_2P } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -22,7 +23,7 @@ const pressStart = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(SITE_URL),
   title: "Kshaunish Harsha",
   description:
     "Applied AI engineer building agentic systems, RAG platforms, and production LLM pipelines — end to end.",
